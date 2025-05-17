@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiageng Zhang - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .progress-bar-bg {
+            background-color: #e5e7eb; /* Tailwind gray-200 */
+        }
+        .progress-bar-fill {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+        }
+        .icon-link:hover {
+            color: #3b82f6; /* Tailwind blue-500 */
+        }
+        .section-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem; /* mb-4 */
+            color: #1f2937; /* Tailwind gray-800 */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            position: relative; /* Needed for timeline elements */
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 500; /* font-medium */
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb; /* Tailwind blue-600 */
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: #3b82f6; /* Tailwind blue-500 */
+            border: 1px solid #3b82f6; /* Tailwind blue-500 */
+        }
+        .btn-outline:hover {
+            background-color: #eff6ff; /* Tailwind blue-50 */
+        }
+
+        .hero-background {
+            background-image: url('https://placehold.co/1200x300/a0aec0/ffffff?text=Mountain+Landscape');
+            background-size: cover;
+            background-position: center;
+            height: 250px; 
+            position: relative;
+        }
+        .profile-image-container {
+            position: absolute;
+            bottom: -64px; 
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .profile-image {
+            width: 128px; 
+            height: 128px; 
+            border-radius: 9999px; 
+            border: 4px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        
+        .publication-details p {
+            margin-bottom: 0.25rem; /* sm:mb-1 */
+        }
+        .publication-details .authors {
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* gray-600 */
+        }
+        .publication-details .read-paper-link {
+            color: #3b82f6; /* Tailwind blue-500 */
+            text-decoration: underline;
+            font-size: 0.875rem; /* text-sm */
+        }
+        .publication-details .read-paper-link:hover {
+            color: #2563eb; /* Tailwind blue-600 */
+        }
+
+
+        /* Timeline Styles */
+        .timeline-item-container { 
+            padding-left: 2.5rem; 
+            position: relative;
+        }
+        .timeline-icon-container {
+            position: absolute;
+            left: 0;
+            top: 0.125rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%; 
+        }
+        .timeline-icon {
+            background-color: #3b82f6; 
+            color: white;
+            border-radius: 50%;
+            width: 2rem; 
+            height: 2rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10; 
+        }
+        .timeline-line {
+            width: 2px; 
+            background-color: #d1d5db; /* Gray-300 */
+            flex-grow: 1; /* Default to extend */
+            margin-top: 0.25rem; 
+        }
+        /* Style for the very last timeline item's line in a list */
+        .timeline-item-container.is-last .timeline-line {
+            flex-grow: 0 !important;
+            height: 0 !important; /* Effectively hide it or make very short */
+        }
+        
+        /* Experience Project Item Styling */
+        .project-item {
+            display: flex;
+            align-items: flex-start; 
+            margin-bottom: 0.5rem; 
+        }
+        .project-item-icon {
+            color: #3b82f6; 
+            margin-right: 0.5rem; 
+            margin-top: 0.125rem; 
+            width: 1.25em; /* ensure consistent icon width, slightly larger */
+            text-align: center;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+        .project-item-text {
+            flex: 1;
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="hero-background">
+        <div class="profile-image-container">
+            <img src="https://placehold.co/128x128/cbd5e0/4a5568?text=JZ" alt="Jiageng Zhang" class="profile-image"
+            onerror="this.onerror=null; this.src='https://placehold.co/128x128/e2e8f0/94a3b8?text=Profile+Pic';">
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 pt-24"> 
+        <section class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Jiageng Zhang</h1>
+            <p class="text-lg md:text-xl text-gray-800 mt-2">Senior Research Engineer at CoreML</p>
+            <p class="text-md md:text-lg text-gray-600">Google Inc.</p>
+            <div class="flex justify-center space-x-4 mt-4 text-xl md:text-2xl text-gray-500">
+                <a href="https://www.linkedin.com/in/jiageng-zhang" target="_blank" class="icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon-link" aria-label="X/Twitter"><i class="fab fa-twitter"></i></a> 
+                <a href="#" class="icon-link" aria-label="GitHub"><i class="fab fa-github"></i></a> 
+            </div>
+            <div class="mt-6 max-w-xl md:max-w-2xl mx-auto">
+                <p id="userBio" class="text-gray-700 text-sm md:text-base text-left md:text-center">
+                    Senior Research Engineer at Google CoreML with extensive experience specializing in Large
+                    Language Models (LLMs), multimodal AI, and efficient deep learning. Proven track record of
+                    translating cutting-edge research into impactful production solutions, with key contributions to
+                    Gemini delivering significant inference cost reductions, substantial human evaluation gains, and
+                    novel multimodal and RAG capabilities.
+                </p>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="btn btn-primary"> 
+                    <i class="fas fa-download mr-2"></i> Download Résumé
+                </a>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section class="timeline-section">
+                <h2 class="section-title mb-6 text-2xl border-b pb-2">Experience</h2>
+                <div class="card timeline-outer-card"> 
+                    <div class="timeline-item-container"> 
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="timeline-line"></div> 
+                        </div>
+                        <div> 
+                            <h3 class="text-lg font-semibold text-gray-900">Senior Research Engineer at CoreML</h3>
+                            <p class="text-md text-blue-600">Google Inc.</p>
+                            <p class="text-sm text-gray-500 mb-3">May 2019 - Present | Mountain View, CA</p>
+                            
+                            <div class="space-y-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">LLM Research (Multimodal, Efficient LLM, Agent):</h4>
+                                    <div class="space-y-1">
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-brain fa-fw"></i></span>
+                                            <span class="project-item-text">Led "Selective Deepening" for efficient LLM context zooming (1.5% tool use accuracy gain).</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-link fa-fw"></i></span>
+                                            <span class="project-item-text">Engineered "LoRA-Adapted PrefixLM" (1% perplexity improvement).</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-video fa-fw"></i></span>
+                                            <span class="project-item-text">Introduced "Video Latent Thinking" (70% inference cost reduction).</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-tachometer-alt fa-fw"></i></span>
+                                            <span class="project-item-text">Implemented dynamic multi-head sparse attention for speed-up.</span>
+                                        </div>
+                                         <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-users-cog fa-fw"></i></span>
+                                            <span class="project-item-text">Developing multi-agent RL system for advanced training. (Ongoing)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-semibold text-gray-800 mb-2">Gemini Post-Training (Productionisation):</h4>
+                                     <div class="space-y-1">
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-camera-retro fa-fw"></i></span>
+                                            <span class="project-item-text">RL for Pixel Screenshots (>10% human eval gain).</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-ad fa-fw"></i></span>
+                                            <span class="project-item-text">CoT for Offensive Ads Prediction (~6% detection uplift).</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-lightbulb fa-fw"></i></span>
+                                            <span class="project-item-text">Launched Lens Visual Suggest feature.</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-search-plus fa-fw"></i></span>
+                                            <span class="project-item-text">Enhanced Search Magi Control Engine (10% win rate boost).</span>
+                                        </div>
+                                         <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-cloud-upload-alt fa-fw"></i></span>
+                                            <span class="project-item-text">Scaled multimodal LoRA training on Vertex AI for 32+ enterprise clients.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-semibold text-gray-800 mb-2">Gemini Embedding (Omni-modal Representation):</h4>
+                                    <div class="space-y-1">
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-retweet fa-fw"></i></span>
+                                            <span class="project-item-text">Spearheaded online RL framework for RAG co-optimization with Gemini.</span>
+                                        </div>
+                                        <div class="project-item">
+                                            <span class="project-item-icon"><i class="fas fa-sitemap fa-fw"></i></span>
+                                            <span class="project-item-text">Built multi-task encoder training infrastructure for Gemini Embedding.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section">
+                <h2 class="section-title mb-6 text-2xl border-b pb-2">Education</h2>
+                <div class="card timeline-outer-card">
+                     <div class="timeline-item-container">
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Master of Science, Computer Science and Engineering</h3>
+                            <p class="text-md text-blue-600">University of California, San Diego</p>
+                            <p class="text-sm text-gray-500 mb-1">March 2019 | San Diego, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card timeline-outer-card">
+                    <div class="timeline-item-container is-last"> 
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="timeline-line"></div> 
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">B.S. in Computer Science</h3>
+                            <p class="text-md text-blue-600">University of Rochester</p>
+                            <p class="text-sm text-gray-500 mb-1">May 2017 | Rochester, NY</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-12 timeline-section">
+            <h2 class="section-title mb-6 text-2xl border-b pb-2">Publications</h2>
+            <div class="card timeline-outer-card"> 
+                <div class="space-y-6"> 
+                    <div class="timeline-item-container">
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="publication-details">
+                            <p class="font-semibold text-gray-800">Findings of EMNLP 2024</p>
+                            <p class="italic">"Improving Multi-Agent Debate with Sparse Communication Topology."</p>
+                            <p class="authors">Zhang, J., Li, Y., Du, Y., Hou, L., Grabowski, P., Li, Y., & le, E.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-container">
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="publication-details">
+                            <p class="font-semibold text-gray-800">arXiv:2403.05530</p>
+                            <p class="italic">"Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context."</p>
+                            <p class="authors">Gemini Team (incl. Zhang, J.).</p>
+                            <a href="https://arxiv.org/abs/2403.05530" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                        </div>
+                    </div>
+                    <div class="timeline-item-container">
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="publication-details">
+                           <p class="font-semibold text-gray-800">arXiv:2312.11805</p>
+                           <p class="italic">"Gemini: A family of highly capable multimodal models."</p>
+                           <p class="authors">Gemini Team (incl. Zhang, J.).</p>
+                           <a href="https://arxiv.org/abs/2312.11805" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                        </div>
+                    </div>
+                    <div class="timeline-item-container">
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="publication-details">
+                            <p class="font-semibold text-gray-800">WACV 2024</p>
+                            <p class="italic">"MaskConver: Revisiting Pure Convolution Model for Panoptic Segmentation."</p>
+                            <p class="authors">Rashwan, A., Zhang, J., Taalimi, A., et al.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-container is-last"> 
+                        <div class="timeline-icon-container">
+                            <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                            <div class="timeline-line"></div> 
+                        </div>
+                        <div class="publication-details">
+                            <p class="font-semibold text-gray-800">arXiv:2310.12100</p>
+                            <p class="italic">"Non-Intrusive Adaptation: Input-Centric Parameter-efficient Fine-Tuning for Versatile Multimodal Modeling."</p>
+                            <p class="authors">Wang, Y., Wu, J., Dabral, T., Zhang, J., et al.</p>
+                            <a href="https://arxiv.org/abs/2310.12100" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <section>
+                <h2 class="section-title mb-6 text-2xl border-b pb-2">Technical Skills</h2>
+                <div class="card">
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-blue-700"><i class="fas fa-code mr-2"></i>PYTHON</span>
+                            <span class="text-sm font-medium text-blue-700">95%</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-blue-700"><i class="fas fa-code mr-2"></i>C++</span>
+                            <span class="text-sm font-medium text-blue-700">80%</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>TENSORFLOW</span>
+                            <span class="text-sm font-medium text-blue-700">90%</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>JAX</span>
+                            <span class="text-sm font-medium text-blue-700">85%</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>PYTORCH</span>
+                            <span class="text-sm font-medium text-blue-700">85%</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title mb-6 text-2xl border-b pb-2">Hobbies</h2>
+                <div class="card">
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-green-700"><i class="fas fa-hiking mr-2"></i>HIKING</span>
+                             <span class="text-sm font-medium text-green-700">Advanced</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-purple-700"><i class="fas fa-cat mr-2"></i>CATS</span>
+                            <span class="text-sm font-medium text-purple-700">Expert Cuddler</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="bg-purple-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-yellow-700"><i class="fas fa-book-reader mr-2"></i>READING SCI-FI</span>
+                            <span class="text-sm font-medium text-yellow-700">Voracious</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 mt-12 bg-gray-100">
+        <p class="text-gray-600">&copy; <span id="currentYear"></span> Jiageng Zhang. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
