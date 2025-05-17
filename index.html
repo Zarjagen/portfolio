@@ -12,12 +12,12 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Tailwind gray-50 */
         }
-        .progress-bar-bg {
+        /* .progress-bar-bg {
             background-color: #e5e7eb; /* Tailwind gray-200 */
-        }
+        /* }
         .progress-bar-fill {
             background-color: #3b82f6; /* Tailwind blue-500 */
-        }
+        /* } */
         .icon-link:hover {
             color: #3b82f6; /* Tailwind blue-500 */
         }
@@ -62,7 +62,7 @@
         }
 
         .hero-background {
-            background-image: url('https://placehold.co/1200x300/a0aec0/ffffff?text=Mountain+Landscape');
+            background-image: url('https://placehold.co/1200x300/a0aec0/ffffff?text=Universe');
             background-size: cover;
             background-position: center;
             height: 250px; 
@@ -83,19 +83,19 @@
         }
         
         .publication-details p {
-            margin-bottom: 0.25rem; /* sm:mb-1 */
+            margin-bottom: 0.25rem; 
         }
         .publication-details .authors {
-            font-size: 0.875rem; /* text-sm */
-            color: #4b5563; /* gray-600 */
+            font-size: 0.875rem; 
+            color: #4b5563; 
         }
         .publication-details .read-paper-link {
-            color: #3b82f6; /* Tailwind blue-500 */
+            color: #3b82f6; 
             text-decoration: underline;
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem; 
         }
         .publication-details .read-paper-link:hover {
-            color: #2563eb; /* Tailwind blue-600 */
+            color: #2563eb; 
         }
 
 
@@ -127,13 +127,12 @@
         .timeline-line {
             width: 2px; 
             background-color: #d1d5db; /* Gray-300 */
-            flex-grow: 1; /* Default to extend */
+            flex-grow: 1; 
             margin-top: 0.25rem; 
         }
-        /* Style for the very last timeline item's line in a list */
         .timeline-item-container.is-last .timeline-line {
             flex-grow: 0 !important;
-            height: 0 !important; /* Effectively hide it or make very short */
+            height: 0 !important; 
         }
         
         /* Experience Project Item Styling */
@@ -146,13 +145,49 @@
             color: #3b82f6; 
             margin-right: 0.5rem; 
             margin-top: 0.125rem; 
-            width: 1.25em; /* ensure consistent icon width, slightly larger */
+            width: 1.25em; 
             text-align: center;
-            flex-shrink: 0; /* Prevent icon from shrinking */
+            flex-shrink: 0; 
         }
         .project-item-text {
             flex: 1;
         }
+
+        /* Technical Skills List Styling */
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem; /* mb-3 */
+            font-size: 0.9375rem; /* text-base slightly smaller */
+        }
+        .skill-item-icon {
+            color: #3b82f6; /* text-blue-500 */
+            margin-right: 0.75rem; /* mr-3 */
+            width: 1.5em; /* Consistent icon width */
+            text-align: center;
+        }
+        .skill-name {
+            font-weight: 500; /* font-medium */
+            color: #1f2937; /* text-gray-800 */
+            flex-grow: 1;
+        }
+        .skill-level {
+            font-size: 0.8125rem; /* text-sm slightly smaller */
+            color: #6b7280; /* text-gray-500 */
+            background-color: #e5e7eb; /* bg-gray-200 */
+            padding: 0.125rem 0.5rem; /* py-0.5 px-2 */
+            border-radius: 0.25rem; /* rounded-md */
+        }
+
+
+        /* Hobby progress bar colors */
+        .hobby-cats .progress-bar-fill { background-color: #a855f7; } /* Purple */
+        .hobby-piano .progress-bar-fill { background-color: #0ea5e9; } /* Sky Blue */
+        .hobby-apex .progress-bar-fill { background-color: #ef4444; } /* Red */
+        .hobby-tennis .progress-bar-fill { background-color: #22c55e; } /* Green */
+        .hobby-golf .progress-bar-fill { background-color: #f97316; } /* Orange */
+        .hobby-reading .progress-bar-fill { background-color: #eab308; } /* Yellow */
+
 
     </style>
 </head>
@@ -206,6 +241,7 @@
                             <p class="text-sm text-gray-500 mb-3">May 2019 - Present | Mountain View, CA</p>
                             
                             <div class="space-y-4 text-sm">
+                                <!-- LLM Research Section Commented Out
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">LLM Research (Multimodal, Efficient LLM, Agent):</h4>
                                     <div class="space-y-1">
@@ -231,6 +267,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                                 <div class="mt-3">
                                     <h4 class="font-semibold text-gray-800 mb-2">Gemini Post-Training (Productionisation):</h4>
                                      <div class="space-y-1">
@@ -327,10 +364,10 @@
                             <div class="timeline-line"></div>
                         </div>
                         <div class="publication-details">
-                            <p class="font-semibold text-gray-800">arXiv:2403.05530</p>
+                            <p class="font-semibold text-gray-800">Preprint (arXiv)</p>
                             <p class="italic">"Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context."</p>
                             <p class="authors">Gemini Team (incl. Zhang, J.).</p>
-                            <a href="https://arxiv.org/abs/2403.05530" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                            <a href="https://arxiv.org/abs/2403.05530" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper (2403.05530)</a>
                         </div>
                     </div>
                     <div class="timeline-item-container">
@@ -339,10 +376,10 @@
                             <div class="timeline-line"></div>
                         </div>
                         <div class="publication-details">
-                           <p class="font-semibold text-gray-800">arXiv:2312.11805</p>
+                           <p class="font-semibold text-gray-800">Preprint (arXiv)</p>
                            <p class="italic">"Gemini: A family of highly capable multimodal models."</p>
                            <p class="authors">Gemini Team (incl. Zhang, J.).</p>
-                           <a href="https://arxiv.org/abs/2312.11805" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                           <a href="https://arxiv.org/abs/2312.11805" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper (2312.11805)</a>
                         </div>
                     </div>
                     <div class="timeline-item-container">
@@ -362,10 +399,10 @@
                             <div class="timeline-line"></div> 
                         </div>
                         <div class="publication-details">
-                            <p class="font-semibold text-gray-800">arXiv:2310.12100</p>
+                            <p class="font-semibold text-gray-800">Preprint (arXiv)</p>
                             <p class="italic">"Non-Intrusive Adaptation: Input-Centric Parameter-efficient Fine-Tuning for Versatile Multimodal Modeling."</p>
                             <p class="authors">Wang, Y., Wu, J., Dabral, T., Zhang, J., et al.</p>
-                            <a href="https://arxiv.org/abs/2310.12100" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper</a>
+                            <a href="https://arxiv.org/abs/2310.12100" target="_blank" rel="noopener noreferrer" class="read-paper-link">Read Paper (2310.12100)</a>
                         </div>
                     </div>
                 </div>
@@ -376,50 +413,34 @@
             <section>
                 <h2 class="section-title mb-6 text-2xl border-b pb-2">Technical Skills</h2>
                 <div class="card">
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-blue-700"><i class="fas fa-code mr-2"></i>PYTHON</span>
-                            <span class="text-sm font-medium text-blue-700">95%</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 95%"></div>
-                        </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fab fa-python fa-fw"></i></span>
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Expert</span>
                     </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-blue-700"><i class="fas fa-code mr-2"></i>C++</span>
-                            <span class="text-sm font-medium text-blue-700">80%</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
+                        <span class="skill-name">TensorFlow</span>
+                        <span class="skill-level">Expert</span>
                     </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>TENSORFLOW</span>
-                            <span class="text-sm font-medium text-blue-700">90%</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
-                        </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
+                        <span class="skill-name">JAX</span>
+                        <span class="skill-level">Expert</span>
                     </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>JAX</span>
-                            <span class="text-sm font-medium text-blue-700">85%</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
+                        <span class="skill-name">PyTorch</span>
+                        <span class="skill-level">Expert</span>
                     </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-blue-700"><i class="fas fa-cogs mr-2"></i>PYTORCH</span>
-                            <span class="text-sm font-medium text-blue-700">85%</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fas fa-robot fa-fw"></i></span>
+                        <span class="skill-name">Hugging Face Infrastructure</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-item-icon"><i class="fab fa-cuttlefish fa-fw"></i></span> <span class="skill-name">C++</span>
+                        <span class="skill-level">Proficient</span>
                     </div>
                 </div>
             </section>
@@ -427,31 +448,58 @@
             <section>
                 <h2 class="section-title mb-6 text-2xl border-b pb-2">Hobbies</h2>
                 <div class="card">
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-green-700"><i class="fas fa-hiking mr-2"></i>HIKING</span>
-                             <span class="text-sm font-medium text-green-700">Advanced</span>
-                        </div>
-                        <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
+                    <div class="mb-4 hobby-cats">
                         <div class="flex justify-between mb-1">
                             <span class="text-base font-medium text-purple-700"><i class="fas fa-cat mr-2"></i>CATS</span>
-                            <span class="text-sm font-medium text-purple-700">Expert Cuddler</span>
+                             <span class="text-sm font-medium text-purple-700">Cat Parent</span>
                         </div>
                         <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="bg-purple-500 h-2.5 rounded-full" style="width: 100%"></div>
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-4 hobby-piano">
                         <div class="flex justify-between mb-1">
-                            <span class="text-base font-medium text-yellow-700"><i class="fas fa-book-reader mr-2"></i>READING SCI-FI</span>
-                            <span class="text-sm font-medium text-yellow-700">Voracious</span>
+                            <span class="text-base font-medium text-sky-600"><i class="fas fa-music mr-2"></i>PIANO</span>
+                            <span class="text-sm font-medium text-sky-600">Proficient (Recreational)</span>
                         </div>
                         <div class="w-full progress-bar-bg rounded-full h-2.5">
-                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 hobby-apex">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-red-600"><i class="fas fa-gamepad mr-2"></i>APEX LEGENDS</span>
+                            <span class="text-sm font-medium text-red-600">Grandmaster Rank</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                     <div class="mb-4 hobby-tennis">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-green-600"><i class="fas fa-table-tennis mr-2"></i>TENNIS</span>
+                            <span class="text-sm font-medium text-green-600">NTRP 4.0</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                     <div class="mb-4 hobby-golf">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-orange-600"><i class="fas fa-golf-ball mr-2"></i>GOLF</span>
+                            <span class="text-sm font-medium text-orange-600">Recreational Player</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 hobby-reading">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-yellow-600"><i class="fas fa-book-open mr-2"></i>READING</span>
+                            <span class="text-sm font-medium text-yellow-600">Aspiring Bibliophile</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 60%"></div>
                         </div>
                     </div>
                 </div>
