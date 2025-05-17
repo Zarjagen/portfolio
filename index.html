@@ -12,12 +12,12 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Tailwind gray-50 */
         }
-        /* .progress-bar-bg {
+        .progress-bar-bg {
             background-color: #e5e7eb; /* Tailwind gray-200 */
-        /* }
+        }
         .progress-bar-fill {
             background-color: #3b82f6; /* Tailwind blue-500 */
-        /* } */
+        }
         .icon-link:hover {
             color: #3b82f6; /* Tailwind blue-500 */
         }
@@ -62,7 +62,7 @@
         }
 
         .hero-background {
-            background-image: url('https://placehold.co/1200x300/a0aec0/ffffff?text=Universe');
+            background-image: url('https://placehold.co/1200x300/a0aec0/ffffff?text=The+Universe'); 
             background-size: cover;
             background-position: center;
             height: 250px; 
@@ -153,30 +153,18 @@
             flex: 1;
         }
 
-        /* Technical Skills List Styling */
+        /* Technical Skills List Styling - Reverted to progress bar style */
         .skill-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem; /* mb-3 */
-            font-size: 0.9375rem; /* text-base slightly smaller */
+            margin-bottom: 1rem; /* mb-4 */
         }
-        .skill-item-icon {
-            color: #3b82f6; /* text-blue-500 */
-            margin-right: 0.75rem; /* mr-3 */
-            width: 1.5em; /* Consistent icon width */
-            text-align: center;
+        .skill-item .flex {
+             margin-bottom: 0.25rem; /* mb-1 */
         }
-        .skill-name {
-            font-weight: 500; /* font-medium */
+        .skill-item .text-base { /* Skill name */
             color: #1f2937; /* text-gray-800 */
-            flex-grow: 1;
         }
-        .skill-level {
-            font-size: 0.8125rem; /* text-sm slightly smaller */
-            color: #6b7280; /* text-gray-500 */
-            background-color: #e5e7eb; /* bg-gray-200 */
-            padding: 0.125rem 0.5rem; /* py-0.5 px-2 */
-            border-radius: 0.25rem; /* rounded-md */
+         .skill-item .text-sm { /* Skill level text */
+            color: #4b5563; /* text-gray-600 */
         }
 
 
@@ -187,7 +175,6 @@
         .hobby-tennis .progress-bar-fill { background-color: #22c55e; } /* Green */
         .hobby-golf .progress-bar-fill { background-color: #f97316; } /* Orange */
         .hobby-reading .progress-bar-fill { background-color: #eab308; } /* Yellow */
-
 
     </style>
 </head>
@@ -212,11 +199,7 @@
             </div>
             <div class="mt-6 max-w-xl md:max-w-2xl mx-auto">
                 <p id="userBio" class="text-gray-700 text-sm md:text-base text-left md:text-center">
-                    Senior Research Engineer at Google CoreML with extensive experience specializing in Large
-                    Language Models (LLMs), multimodal AI, and efficient deep learning. Proven track record of
-                    translating cutting-edge research into impactful production solutions, with key contributions to
-                    Gemini delivering significant inference cost reductions, substantial human evaluation gains, and
-                    novel multimodal and RAG capabilities.
+                    Senior Research Engineer at Google CoreML specializing in Large Language Models (LLMs), multimodal AI, and model efficiency. Proven track record translating research into impactful production solutions, contributing to Gemini with substantial human evaluation gains and novel multimodal/RAG capabilities.
                 </p>
             </div>
             <div class="mt-8">
@@ -414,33 +397,58 @@
                 <h2 class="section-title mb-6 text-2xl border-b pb-2">Technical Skills</h2>
                 <div class="card">
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fab fa-python fa-fw"></i></span>
-                        <span class="skill-name">Python</span>
-                        <span class="skill-level">Expert</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fab fa-python fa-fw mr-2 text-blue-500"></i>PYTHON</span>
+                            <span class="text-sm font-medium text-gray-600">Expert</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
-                        <span class="skill-name">TensorFlow</span>
-                        <span class="skill-level">Expert</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fas fa-cogs fa-fw mr-2 text-blue-500"></i>TENSORFLOW</span>
+                            <span class="text-sm font-medium text-gray-600">Expert</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
-                        <span class="skill-name">JAX</span>
-                        <span class="skill-level">Expert</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fas fa-cogs fa-fw mr-2 text-blue-500"></i>JAX</span>
+                            <span class="text-sm font-medium text-gray-600">Expert</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fas fa-cogs fa-fw"></i></span>
-                        <span class="skill-name">PyTorch</span>
-                        <span class="skill-level">Expert</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fas fa-cogs fa-fw mr-2 text-blue-500"></i>PYTORCH</span>
+                            <span class="text-sm font-medium text-gray-600">Expert</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fas fa-robot fa-fw"></i></span>
-                        <span class="skill-name">Hugging Face Infrastructure</span>
-                        <span class="skill-level">Expert</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fas fa-robot fa-fw mr-2 text-blue-500"></i>HUGGING FACE</span>
+                            <span class="text-sm font-medium text-gray-600">Expert</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-item-icon"><i class="fab fa-cuttlefish fa-fw"></i></span> <span class="skill-name">C++</span>
-                        <span class="skill-level">Proficient</span>
+                        <div class="flex justify-between w-full items-center">
+                            <span class="text-base font-medium text-gray-800"><i class="fab fa-cuttlefish fa-fw mr-2 text-blue-500"></i>C++</span>
+                            <span class="text-sm font-medium text-gray-600">Proficient</span>
+                        </div>
+                        <div class="w-full progress-bar-bg rounded-full h-2.5 mt-1">
+                            <div class="progress-bar-fill h-2.5 rounded-full" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
             </section>
